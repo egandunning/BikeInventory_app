@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Home</title>
+</head>
+<body>
+<!-- header start --> 
+ <table border='1'>
+   <tr>
+     <td><%= link_to 'Home', welcome_index_path %></td>
+     <td><a href="rental/menu.html">Rentals</a></td>
+     <td><a href="bicycle/menu.html">Bicycles</a></td>
+     <td><a href="renter/menu.html">Renters</a></td>
+     <td><a href="account/menu.html">Account info</a>
+     <td><a href="logout.html">Logout</a></td>
+   </tr>
+ </table>
+<!-- header end --> 
+<br>
+<%= link_to 'New Article', new_article_path %><br>
+<%= link_to 'View Articles', articles_path %>
+
+</body>
+</html>
