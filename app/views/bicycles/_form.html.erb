@@ -1,0 +1,46 @@
+<%= form_for @bicycle do |f| %>
+  
+  <% if @bicycle.errors.any? %>
+    <div id="error_explanation">
+      <h3><%= pluralize(@bicycle.errors.count, "error") %> prohibited this article from being saved: </h2>
+      <ul>
+        <% @bicycle.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= f.label :type %><br>
+      <!--<%= select_tag(:type, options_for_select([["road", "road"], ["mountain", "mountain"]], 2)) %>-->
+      <select name="bicycle[biketype]" id="bicycle_biketype">
+      <option value="road">Road</option>
+      <option value="mountain">Mountain</option>
+    </select>
+  </p>
+
+  <p>
+    <%= f.label :brand %><br>
+    <%= f.text_field :brand%>
+  </p>
+
+  <p>
+    <%= f.label :model %><br>
+    <%= f.text_field :model%>
+  </p>
+
+  <p>
+    <%= f.label :serial %><br>
+    <%= f.text_field :serial%>
+  </p>
+
+  <p>
+    <%= f.label :notes %><br>
+    <%= f.text_area :notes%>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

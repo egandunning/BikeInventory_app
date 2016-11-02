@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  biketype: MyString
+  brand: MyString
+  model: MyString
+  serial: MyString
+  notes: MyText
+
+two:
+  biketype: MyString
+  brand: MyString
+  model: MyString
+  serial: MyString
+  notes: MyText

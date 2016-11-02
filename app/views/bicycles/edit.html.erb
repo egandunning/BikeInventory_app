@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>View Article</title>
+<title>New Article</title>
 </head>
 <body>
 <!-- header start --> 
@@ -19,16 +19,11 @@
 <!-- header end --> 
 <br>
 <br>
+<h3>New Article</h3>
 
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
+<%= render 'form' %>
 
-<p>
-  <strong>Text:</strong>
-  <%= @article.text %>
-</p>
+<%= link_to 'Back', bicycles_path %>
 
 </body>
 </html>

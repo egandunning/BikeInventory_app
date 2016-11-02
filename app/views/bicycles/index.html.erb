@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>View Article</title>
+<title>View Articles</title>
 </head>
 <body>
 <!-- header start --> 
@@ -19,16 +19,23 @@
 <!-- header end --> 
 <br>
 <br>
+<h3>List of Bicycles</h3>
+<p><%= link_to 'New bicycle', new_bicycle_path %></p>
+<table>
+  <tr><th>Type</th><th>Brand</th><th>Model</th><th>Serial number</th></tr>
 
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
-
-<p>
-  <strong>Text:</strong>
-  <%= @article.text %>
-</p>
+  <% @bicycles.each do |bicycle| %>
+  <tr>
+    <td><%= bicycle.biketype %></td>
+    <td><%= bicycle.brand %></td>
+    <td><%= bicycle.model %></td>
+    <td><%= bicycle.serial %></td>
+    <td><%= link_to 'Show', bicycle_path(bicycle) %></td>
+    <td><%= link_to 'Edit', edit_bicycle_path(bicycle) %></td>
+    <td><%= link_to 'Delete', bicycle_path(bicycle), method: :delete, data: {confirm: 'Are you sure?'} %></td>
+  </tr>
+  <% end %>
+</table>
 
 </body>
 </html>
