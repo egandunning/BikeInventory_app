@@ -45,5 +45,65 @@
   <%= @bicycle.notes %>
 </p>
 
+<h3>Rentals</h3>
+
+<table border="1">
+  <tr>
+    <th>Name</th>
+    <th>Checkout<br>date</th>
+    <th>Return<br>date</th>
+    <th>Email address</th>
+    <th>Phone number</th>
+    <th>Lock<br>number</th>
+    <th>Helmet</th>
+  </tr>
+  <% @bicycle.rentals.each do |rental| %>
+  <tr>
+    <td><%= rental.renter %></td>
+    <td><%= rental.checkedout %></td>
+    <td><%= rental.returned %></td>
+    <td><%= rental.email %></td>
+    <td><%= rental.phone %></td>
+    <td><%= rental.locknum %></td>
+    <td><%= rental.helmet ? "yes" : "no" %></td>
+  </tr>
+  <% end %>
+</table>
+
+<h3>Add a rental:</h2>
+<%= form_for([@bicycle, @bicycle.rentals.build]) do |f| %>
+	<p>
+		<%= f.label :renter %><br>
+		<%= f.text_field :renter %>
+	</p>
+	<p>
+		<%= f.label :checkedout %><br>
+		<%= f.date_select :checkedout %>
+	</p>
+	<p>
+		<%= f.label :returned %><br>
+		<%= f.date_select :returned, :include_blank => true %>
+	</p>
+	<p>
+		<%= f.label :email %><br>
+		<%= f.text_field :email %>
+	</p>
+	<p>
+		<%= f.label :phone %><br>
+		<%= f.text_field :phone %>
+	</p>
+	<p>
+		<%= f.label :locknum %><br>
+		<%= f.text_field :locknum %>
+	</p>
+	<p>
+		<%= f.label :helmet %><br>
+		<%= f.check_box :helmet %>
+	</p>
+	<p>
+		<%= f.submit %>
+	</p>
+<% end %>
+
 </body>
 </html>

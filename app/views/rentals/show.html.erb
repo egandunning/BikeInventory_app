@@ -1,0 +1,52 @@
+<p>
+	<strong>Brand:</strong>
+	<%= @bicycle.brand %>
+</p>
+
+<p>
+	<strong>Model:</strong>
+	<%= @bicycle.model %>
+</p>
+
+<p>
+	<strong>Type:</strong>
+	<%= @bicycle.biketype %>
+</p>
+
+<h3>Add a rental:</h2>
+<%= form_for([@bicycle, @bicycle.rentals.build]) do |f| %>
+	<p>
+		<%= f.label :renter %><br>
+		<%= f.text_field :renter %>
+	</p>
+	<p>
+		<%= f.label :checkedout %><br>
+		<%= f.date_select :checkedout %>
+	</p>
+	<p>
+		<%= f.label :returned %><br>
+		<%= f.date_select :returned %>
+	</p>
+	<p>
+		<%= f.label :email %><br>
+		<%= f.text_field :email %>
+	</p>
+	<p>
+		<%= f.label :phone %><br>
+		<%= f.text_field :phone %>
+	</p>
+	<p>
+		<%= f.label :locknum %><br>
+		<%= f.text_field :locknum %>
+	</p>
+	<p>
+		<%= f.label :helmet %><br>
+		<%= f.check_box :helmet %>
+	</p>
+	<p>
+		<%= f.submit %>
+	</p>
+<% end %>
+
+<%= link_to 'Edit', edit_bicycle_path(@bicycle) %> |
+<%= link_to 'Back', bicycles_path %>

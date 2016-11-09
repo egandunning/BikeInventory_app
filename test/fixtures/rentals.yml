@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  renter: MyString
+  checkedout: 2016-11-09
+  returned: 2016-11-09
+  email: MyString
+  phone: MyString
+  locknum: 1
+  helmet: false
+  amountpaid: 1
+  bicycle: one
+
+two:
+  renter: MyString
+  checkedout: 2016-11-09
+  returned: 2016-11-09
+  email: MyString
+  phone: MyString
+  locknum: 1
+  helmet: false
+  amountpaid: 1
+  bicycle: two
