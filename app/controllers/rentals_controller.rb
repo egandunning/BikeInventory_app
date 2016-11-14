@@ -37,7 +37,7 @@ class RentalsController < ApplicationController
 		@rental = Rental.find(params[:id])
 		@rental.destroy
 		
-		redirect_to bicycle_path
+		redirect_to bicycle_path(@bicycle)
 	end
 				
 	private
