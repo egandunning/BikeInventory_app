@@ -33,10 +33,11 @@ class RentalsController < ApplicationController
 	end
 	
 	def destroy
+		@bicycle = Bicycle.find(params[:bicycle_id])
 		@rental = Rental.find(params[:id])
 		@rental.destroy
 		
-		redirect_to articles_path
+		redirect_to bicycle_path
 	end
 				
 	private
