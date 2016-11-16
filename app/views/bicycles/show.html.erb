@@ -47,7 +47,29 @@
 
 <h3>Rentals</h3>
 
-<%= render @bicycle.rentals %>
+<table border="1">
+  <tr>
+    <th>Name</th>
+    <th>Checkout<br>date</th>
+    <th>Return<br>date</th>
+    <th>Email address</th>
+    <th>Phone number</th>
+    <th>Lock<br>number</th>
+    <th>Helmet</th>
+  </tr>
+  <% @bicycle.rentals.each do |rental| %>
+  <tr>
+    <td><%= rental.renter %></td>
+    <td><%= rental.checkedout %></td>
+    <td><%= rental.returned %></td>
+    <td><%= rental.email %></td>
+    <td><%= rental.phone %></td>
+    <td><%= rental.locknum %></td>
+    <td><%= rental.helmet ? "yes" : "no" %></td>
+    <td><%= link_to 'Delete rental', [rental.bicycle, rental], method: :delete, data: {confirm: 'Are you sure?'} %>
+  </tr>
+  <% end %>
+</table>
 
 <h3>Add a rental:</h3>
 
