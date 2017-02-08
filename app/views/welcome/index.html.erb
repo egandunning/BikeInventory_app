@@ -9,17 +9,20 @@
  <table border='1'>
    <tr>
      <td><%= link_to 'Home', welcome_index_path %></td>
-     <td><a href="rental/menu.html">Rentals</a></td>
-     <td><a href="bicycle/menu.html">Bicycles</a></td>
-     <td><a href="renter/menu.html">Renters</a></td>
-     <td><a href="account/menu.html">Account info</a>
-     <td><a href="logout.html">Logout</a></td>
+     <td><%= link_to 'Bicycles', bicycles_path %></td>
    </tr>
  </table>
 <!-- header end --> 
 <br>
-<%= link_to 'New Article', new_article_path %><br>
-<%= link_to 'View Articles', articles_path %><br>
-
+<h3>Bicycle Inventory System</h3>
+<h4>About</h4>
+<p>Simple web application to record bicycles and rentals. Internet connection not required.
+Click on the "bicycles" link above to get started.
+<p>Created by Egan Dunning.
+<h4>Links</h4>
+<p><a href="http://www.plu.edu/recreations/outdoor-rec/bike_co-op/">PLU Bike Co-op website</a>
+<p><a href="http://nashbar.com">Bike Nashbar</a> - for buying parts.
+<p><a href="http://github.com/egandunning/BikeInventory_app">Source code</a>
 </body>
 </html>
+

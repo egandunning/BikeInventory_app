@@ -9,11 +9,7 @@
  <table border='1'>
    <tr>
      <td><%= link_to 'Home', welcome_index_path %></td>
-     <td><a href="rental_menu.jsp">Rentals</a></td>
      <td><%= link_to 'Bicycles', bicycles_path %></td>
-     <td><a href="renter_menu.jsp">Renters</a></td>
-     <td><a href="account_menu.jsp">Account info</a>
-     <td><a href="logout.jsp">Logout</a></td>
    </tr>
  </table>
 <!-- header end --> 
@@ -21,7 +17,7 @@
 <br>
 <h3>List of Bicycles</h3>
 <p><%= link_to 'New bicycle', new_bicycle_path %></p>
-<table>
+<table border='1'>
   <tr><th>Type</th><th>Brand</th><th>Model</th><th>Serial number</th></tr>
 
   <% @bicycles.each do |bicycle| %>
